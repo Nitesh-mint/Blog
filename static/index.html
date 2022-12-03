@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    .card-text{
+        font-size: 13px;
+        text-overflow: ellipsis;
+         white-space: nowrap;
+        overflow: hidden;
+    }
+    .card-body{
+        background-color: #fafafa;
+    }
+</style>
+
+<!-- <header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my Blog App</h3>
+                    <p class="text-light">A simple project on Django &nbsp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header> -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in object_list %}
+            <div class="card mb-4 border-0">
+                <div class="card-body">
+                    <h2 class="card-title font-weight-bold" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">{{ post.title }}</h2>
+                    <p class="card-text  text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text">
+                            {{post.content|safe|slice:":150"}}
+                    </p>
+
+                    <br>
+                    <a  href="{% url 'post_detail' post.slug %}" class="btn">Read More &rarr;</a>
+                    <hr>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% if is_paginated %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li>
+        <!--  -->
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+        </a>
+    </li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><i class="bi bi-arrow-left"><a href="?page={{ page_obj.next_page_number }}" class="page-item">Next&raquo;</a></i></li>
+
+    {% endif %}
+  </ul>
+  </nav>
+</div>
+{% endif %}
+{%endblock%}
