@@ -7,8 +7,11 @@
          white-space: nowrap;
         overflow: hidden;
     }
-    .card-body{
+    /* .card-body{
         background-color: #fafafa;
+    } */
+    #category{
+        font-size: 9px;
     }
 </style>
 
@@ -32,10 +35,11 @@
         <div class="col-md-8 mt-3 left">
             {% for post in object_list %}
             <div class="card mb-4 border-0">
-                <div class="card-body">
-                    <h2 class="card-title font-weight-bold" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">{{ post.title }}</h2>
-                    <p class="card-text  text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">
+                <div class="container">
+                    <h2 class="" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">{{ post.title}}</h2>
+                    <p class="btn btn-outline-danger " id="category">{{post.get_category_display}}</p>
+                    <p class="text-muted ">{{ post.created_on}} </p>
+                    <p class="">
                             {{post.content|safe|slice:":150"}}
                     </p>
 
@@ -45,6 +49,9 @@
                 </div>
             </div>
             {% endfor %}
+        </div>
+        <div class="col-md-4">
+            {% block sidebar %}{% include 'sidebar.html' %} {% endblock sidebar %}
         </div>
     </div>
 </div>

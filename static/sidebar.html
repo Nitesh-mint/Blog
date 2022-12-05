@@ -8,13 +8,15 @@
     </style>
 
     <!-- Sidebar Widgets Column -->
-    <div class="col-md-4 float-right ">
+    <!-- <div class="float-right "> -->
     <div class="card my-4">
-            <h5 class="card-header">About This Project</h5>
-        <div class="card-body">
-            <p class="card-text">This is a blog application i made using django.A simple blog app to post blogs.</p>
-        </div>
+        <p>{{post.get_category_display}}</p>
+        <ul>
+            {% for post in object_list %}
+                <li>{{post.get_category_display}}</li>
+            {% endfor %}
+        </ul>
     </div>
-    </div>
+    <!-- </div> -->
 
 {% endblock sidebar %}
