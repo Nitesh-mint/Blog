@@ -7,11 +7,17 @@
          white-space: nowrap;
         overflow: hidden;
     }
-    /* .card-body{
+    #card-body{
         background-color: #fafafa;
-    } */
+    }
     #category{
         font-size: 9px;
+    }
+    #date{
+        font-size: 12px;
+    }
+    #ct{
+        font-size: 15px;
     }
 </style>
 
@@ -34,18 +40,16 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for post in object_list %}
-            <div class="card mb-4 border-0">
+            <div class="card mb-4 border-0" id="card-body">
                 <div class="container">
                     <h2 class="" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">{{ post.title}}</h2>
                     <p class="btn btn-outline-danger " id="category">{{post.get_category_display}}</p>
-                    <p class="text-muted ">{{ post.created_on}} </p>
-                    <p class="">
+                    <p class="text-muted" id="date">{{ post.created_on}} </p>
+                    <p id="ct">
                             {{post.content|safe|slice:":150"}}
                     </p>
 
-                    <br>
-                    <a  href="{% url 'post_detail' post.slug %}" class="btn">Read More &rarr;</a>
-                    <hr>
+                    <a  href="{% url 'post_detail' post.slug %}" class="btn btn-sm btn-outline-dark">Read More &rarr;</a>
                 </div>
             </div>
             {% endfor %}

@@ -143,7 +143,7 @@ JAZZMIN_SETTINGS = {
     "site_header" : "Blog",
     "site_brand" : "Blog Admin Panel",
     "site_icon" :"",
-    "site_logo" : "https://i.ibb.co/xfzs7Jg/lgo.png",
+    "site_logo" : "https://i.ibb.co/ZXkW33G/lgo.png",
     "Welcome_sign" :"Welcome to my Blog app",
     "copyright" : "BlogNit",
     "user_avatar" : "None",
