@@ -86,10 +86,10 @@ DATABASES = {
         # 'PASSWORD':'nitesh',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'railway',
-        'PORT': '7869',
-        'HOST': 'containers-us-west-132.railway.app',
+        'PORT': '5960',
+        'HOST': 'containers-us-west-65.railway.app',
         'USER':'postgres',
-        'PASSWORD':"upEhHDRyAucxZg8ZlL00",
+        'PASSWORD':"RhnIYbSL0INAZ1sDsoIT",
     }
 }
 
