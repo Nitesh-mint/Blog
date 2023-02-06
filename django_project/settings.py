@@ -238,7 +238,6 @@ CKEDITOR_CONFIGS={
         #     'Image','Cipboard','Link','List','FontSize','Font','resize'],
         # ],
         'height':300,
-        'width':350,
     },  
 }
 
