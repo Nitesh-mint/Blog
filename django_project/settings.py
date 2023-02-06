@@ -85,11 +85,11 @@ DATABASES = {
         # 'USER':'nitesh',
         # 'PASSWORD':'nitesh',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'PORT': '5432',
-        'HOST': 'db.qowbimaqnpfrttfmrvzy.supabase.co',
+        'NAME': 'railway',
+        'PORT': '7869',
+        'HOST': 'containers-us-west-132.railway.app',
         'USER':'postgres',
-        'PASSWORD':"hLH7WD4ztmvQ5dZE",
+        'PASSWORD':"upEhHDRyAucxZg8ZlL00",
     }
 }
 
