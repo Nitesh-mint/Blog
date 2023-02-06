@@ -230,15 +230,19 @@ JAZZMIN_UI_TWEAKS = {
     },
 }
 
-CKEDITOR_CONFIGS={
-    'default':{
-        'toolbar':'full',
-        # 'toolbar_Custom':[
-        #     ['Bold','Italic','Underline',
-        #     'Image','Cipboard','Link','List','FontSize','Font','resize'],
-        # ],
-        'height':300,
-    },  
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            { 'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'] },
+            { 'name': 'paragraph', 'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'] },
+            { 'name': 'links', 'items': ['Link', 'Unlink'] },
+            { 'name': 'insert', 'items': ['Image', 'Table', 'HorizontalRule'] },
+            { 'name': 'styles', 'items': ['Format'] },
+            { 'name': 'clipboard', 'items': ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'] },
+            { 'name': 'tools', 'items': ['Maximize', 'ShowBlocks'] }
+        ],
+        'removePlugins': 'elementspath,save,font',
+    }
 }
 
 #to upload files.
