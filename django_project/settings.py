@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@t3ay((_4b9m5b_7z8ii=n&uu#5@!0_oj80o(rkff*1+b2o3xt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh',]
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh','127.0.0.1']
 
 
 # Application definition
@@ -89,7 +89,7 @@ DATABASES = {
         'PORT': '5960',
         'HOST': 'containers-us-west-65.railway.app',
         'USER':'postgres',
-        'PASSWORD':"RhnIYbSL0INAZ1sDsoIT",
+        'PASSWORD':"uqv532gyn1AKfsNvQQ7u",
     }
 }
 
